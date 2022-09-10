@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>England and Wales Crime Data</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/crimeDataWebServices.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body onload="getSpecificCrimeData();">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">England and Wales Crime Data</a>
+                <a class="navbar-brand" href="index.html">Home</a>
+                <a class="navbar-brand" href="CountySpecificData.html">County Specific</a>
+                <a class="navbar-brand" href="CrimeSpecificData.html">Crime Type</a>
+                <a class="navbar-brand" href="AddCrime.html">Add Crime</a>
+                <a class="navbar-brand" href="EditCrimeData.html">Edit Crime Data</a>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div id="editDataTable" class="row">
+        </div>
+        <div id="editCrimeform" class="row">
+        </div>
+    </div>
+</body>
+</html>

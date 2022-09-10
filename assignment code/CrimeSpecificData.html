@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UK Crime Data</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/crimeDataWebServices.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">England and Wales Crime Data</a>
+                <a class="navbar-brand" href="index.html">Home</a>
+                <a class="navbar-brand" href="CountySpecificData.html">County Specific</a>
+                <a class="navbar-brand" href="CrimeSpecificData.html">Crime Type</a>
+                <a class="navbar-brand" href="AddCrime.html">Add Crime</a>
+                <a class="navbar-brand" href="EditCrimeData.html">Edit Crime Data</a>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <hr style="height:1px; width:100%; border-width:0; color:black; background-color:black">
+        <p> <h3>This page allows you to choose a crime type and it will generate diagrams based on the data stored for all counties relating to the chosen crime type.</h3></p>
+        <hr style="height:1px; width:100%; border-width:0; color:black; background-color:black">
+        <div class="row">
+            <p>
+            <div class="col-md-12">
+                <label for="crimeSelection">Choose a Crime Type:</label><br>
+                <select name="crimeSelection" id="crimeSelection">
+                     <option value="Violence against the person">Violence against the person</option>
+                     <option value="Homicide">Homicide</option>
+                     <option value="Death or serious injury caused by illegal driving">Death or serious injury caused by illegal driving</option>
+                     <option value="Violence with injury">Violence with injury</option>
+                     <option value="Violence without injury">Violence without injury</option>
+                     <option value="Stalking and harassment">Stalking and harassment</option>
+                     <option value="Sexual offences">Sexual offences</option>
+                     <option value="Robbery">Robbery</option>
+                     <option value="Theft offences">Theft offences</option>
+                     <option value="Burglary">Burglary</option>
+                     <option value="Residential burglary">Residential burglary</option>
+                     <option value="Non-residential burglary">Non-residential burglary</option>
+                     <option value="Vehicle offences">Vehicle offences</option>
+                     <option value="Theft from the person">Theft from the person</option>
+                     <option value="Bicycle theft">Bicycle theft</option>
+                     <option value="Shoplifting">Shoplifting</option>
+                     <option value="All other theft offences">All other theft offences</option>
+                     <option value="Criminal damage and arson">Criminal damage and arson</option>
+                     <option value="Drug offences">Drug offences</option>
+                     <option value="Possession of weapons offences">Possession of weapons offences</option>
+                     <option value="Public order offences">Public order offences</option>
+                     <option value="Miscellaneous crimes against society">Miscellaneous crimes against society</option>
+                </select><br>
+                <input type="Submit" value="Search" onclick="searchCrimeSpecificData()">
+            </div>
+            </p>
+        </div>
+        <div class="row">
+            <div id="barChartLineSeperater"></div>
+            <div id="barChartContainer"></div>
+        </div>
+        <div class="row">
+            <div id="scatterChartLineSeperater"></div>
+            <div id="scatterPlotContainer" style="width:100%;max-width:700px"></div>
+        </div>
+        <div class="row">
+            <div id="donutChartLineSeperater"></div>
+            <div class="col-md-12"  id="donutChartContainer">
+                <canvas id="donutChart" style="width:100%"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

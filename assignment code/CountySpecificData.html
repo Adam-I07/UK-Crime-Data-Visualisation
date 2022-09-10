@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UK Crime Data</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/crimeDataWebServices.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">England and Wales Crime Data</a>
+                <a class="navbar-brand" href="index.html">Home</a>
+                <a class="navbar-brand" href="CountySpecificData.html">County Specific</a>
+                <a class="navbar-brand" href="CrimeSpecificData.html">Crime Type</a>
+                <a class="navbar-brand" href="AddCrime.html">Add Crime</a>
+                <a class="navbar-brand" href="EditCrimeData.html">Edit Crime Data</a>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <hr style="height:1px; width:100%; border-width:0; color:black; background-color:black">
+                    <h3>This page allows you to choose a county and it will generate diagrams based on the data stored for that county.</h3>
+                </p>
+            </div>
+        </div>
+        <hr style="height:1px; width:100%; border-width:0; color:black; background-color:black">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="countySelection">Choose a County:</label><br>
+                <select name="countySelection" id="countySelected">
+                     <option value="Avon and Somerset">Avon and Somerset</option>
+                     <option value="Bedfordshire">Bedfordshire</option>
+                     <option value="Cambridgeshire">Cambridgeshire</option>
+                     <option value="Cheshire">Cheshire</option>
+                     <option value="City of London">City of London</option>
+                     <option value="Cleveland">Cleveland</option>
+                     <option value="Cumbria">Cumbria</option>
+                     <option value="Derbyshire">Derbyshire</option>
+                     <option value="Devon and Cornwall">Devon and Cornwall</option>
+                     <option value="Dorset">Dorset</option>
+                     <option value="Durham">Durham</option>
+                     <option value="Dyfed-Powys">Dyfed-Powys</option>
+                     <option value="Essex">Essex</option>
+                     <option value="Gloucestershire">Gloucestershire</option>
+                     <option value="Gwent">Gwent</option>
+                     <option value="Hampshire">Hampshire</option>
+                     <option value="Hertfordshire">Hertfordshire</option>
+                     <option value="Humberside">Humberside</option>
+                     <option value="Kent">Kent</option>
+                     <option value="Lancashire">Lancashire</option>
+                     <option value="Leicestershire">Leicestershire</option>
+                     <option value="Lincolnshire">Lincolnshire</option>
+                     <option value="Merseyside">Merseyside</option>
+                     <option value="Metropolitan Police">Metropolitan Police</option>
+                     <option value="Norfolk">Norfolk</option>
+                     <option value="North Wales">North Wales</option>
+                     <option value="North Yorkshire">North Yorkshire</option>
+                     <option value="Northamptonshire">Northamptonshire</option>
+                     <option value="Northumbria">Northumbria</option>
+                     <option value="Nottinghamshire">Nottinghamshire</option>
+                     <option value="South Wales">South Wales</option>
+                     <option value="South Yorkshire">South Yorkshire</option>
+                     <option value="Staffordshire">Staffordshire</option>
+                     <option value="Suffolk">Suffolk</option>
+                     <option value="Surrey">Surrey</option>
+                     <option value="Sussex">Sussex</option>
+                     <option value="Thames Valley">Thames Valley</option>
+                     <option value="Warwickshire">Warwickshires</option>
+                     <option value="West Mercia">West Mercia</option>
+                     <option value="West Midlands">West Midlands</option>
+                     <option value="West Yorkshire">West Yorkshire</option>
+                     <option value="Wiltshire">Wiltshire</option>
+                </select><br>
+                <input type="Submit" value="Search" onclick="searchCountySpecificData()">
+            </div>
+        </div>
+        <div class="row">
+            <div id="barChartLineSeperater"></div>
+            <div class="col-md-12"  id="barChartContainer">
+                <canvas id="barChart" style="width:100%"></canvas>
+            </div>
+        </div>
+        <div class="row"> 
+            <div id="pieChartLineSeperater"></div>
+            <div class="left" id="pieChartContainer">
+                <canvas id="pieChart" style="width:100%;"></canvas>   
+            </div>
+        </div>  
+        <div class="row"> 
+            <div id="lineChartLineSeperater"></div>
+            <div class="left" id="lineGraphContainer">
+                <canvas id="lineGraph" style="width:100%;"></canvas>   
+            </div>
+        </div>  
+    </div>
+</body>
+</html>
